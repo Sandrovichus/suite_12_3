@@ -69,8 +69,8 @@ class TournamentTest(unittest.TestCase):
         self.all_results[3] = tournament3.start()
         self.assertTrue(self.all_results[3][max(self.all_results[3].keys())] == 'Ник')
 
-    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     # дополнительный тесты для проверки, чтобы медленные бегуны не оказались на первых местах при маленьких дистанциях
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_run_4(self):
         tournament4 = Tournament(6, self.runner_3, self.runner_2, self.runner_1)
         self.all_results[4] = tournament4.start()
